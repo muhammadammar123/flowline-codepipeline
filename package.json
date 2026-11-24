@@ -1,0 +1,33 @@
+{
+  "name": "flowline",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Flowline — a release command center for AWS CodePipeline",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -k -n api,web -c cyan,green \"node --watch server/index.js\" \"vite web\"",
+    "server": "node server/index.js",
+    "build": "vite build web",
+    "start": "node server/index.js"
+  },
+  "dependencies": {
+    "@aws-sdk/client-cloudformation": "^3.1176.0",
+    "@aws-sdk/client-cloudwatch-logs": "^3.1176.0",
+    "@aws-sdk/client-codebuild": "^3.1176.0",
+    "@aws-sdk/client-codepipeline": "^3.1176.0",
+    "@aws-sdk/client-s3": "^3.1176.0",
+    "@aws-sdk/client-sts": "^3.1176.0",
+    "adm-zip": "^0.6.1",
+    "concurrently": "^10.0.7",
+    "dotenv": "^18.0.10",
+    "express": "^5.3.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.7.0",
+    "lucide-react": "^1.79.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.30.6",
+    "vite": "^5.4.21"
+  }
+}
